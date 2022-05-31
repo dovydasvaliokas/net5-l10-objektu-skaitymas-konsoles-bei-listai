@@ -6,10 +6,23 @@ namespace ObjektoNuskaitymasIsKonsoles // Note: actual namespace depends on the 
     {
         static void Main(string[] args)
         {
-            Preke preke1;
+            // Vienos prekės nuskaitymass
+      /*      Preke preke1;
 
             preke1 = NuskaitytiPreke();
-            IsvestiPreke(preke1);
+            IsvestiPreke(preke1);*/
+
+
+
+            // Kelių prekių nuskaitymass
+            List<Preke> prekeList = new List<Preke>();
+
+            prekeList = NuskaitytiKeliasPrekes();
+            Console.WriteLine("----------------");
+            IsvestiKeliasPrekes(prekeList);
+
+
+
             
         }
 
@@ -35,7 +48,22 @@ namespace ObjektoNuskaitymasIsKonsoles // Note: actual namespace depends on the 
             preke.Id = id;
 
             return preke;
+        }
 
+
+        static List<Preke> NuskaitytiKeliasPrekes()
+        {
+            List<Preke> prekeList = new List<Preke>();
+            int n;
+
+            Console.WriteLine("Įveskite kiek bus prekių: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                prekeList.Add(NuskaitytiPreke());
+            }
+            return prekeList;
         }
 
 
@@ -45,6 +73,16 @@ namespace ObjektoNuskaitymasIsKonsoles // Note: actual namespace depends on the 
             Console.WriteLine("Aprašymas: " + preke.Aprasymas);
             Console.WriteLine("Kaina: " + preke.Kaina);
             Console.WriteLine("Id: " + preke.Id);
+        }
+
+
+        static void IsvestiKeliasPrekes(List<Preke> prekeList)
+        {
+            foreach (Preke preke in prekeList)
+            {
+                IsvestiPreke(preke);
+                Console.WriteLine("---------------");
+            }
         }
     }
 }
