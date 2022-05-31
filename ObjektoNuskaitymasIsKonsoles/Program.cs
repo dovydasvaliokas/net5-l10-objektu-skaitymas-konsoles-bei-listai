@@ -26,7 +26,10 @@ namespace ObjektoNuskaitymasIsKonsoles // Note: actual namespace depends on the 
             
         }
 
-
+        /// <summary>
+        /// Funkcija nuskaito Prekės objektą iš konsolės.
+        /// </summary>
+        /// <returns>Prekės objektą</returns>
         static Preke NuskaitytiPreke()
         {
             Preke preke = new Preke();
@@ -50,7 +53,10 @@ namespace ObjektoNuskaitymasIsKonsoles // Note: actual namespace depends on the 
             return preke;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         static List<Preke> NuskaitytiKeliasPrekes()
         {
             List<Preke> prekeList = new List<Preke>();
@@ -66,7 +72,10 @@ namespace ObjektoNuskaitymasIsKonsoles // Note: actual namespace depends on the 
             return prekeList;
         }
 
-
+        /// <summary>
+        /// Funkcija išveda vieną Prekę į konsolę.
+        /// </summary>
+        /// <param name="preke">Prekės objektas, kurį išvedinės į konsolę.</param>
         static void IsvestiPreke(Preke preke)
         {
             Console.WriteLine("Pavadinimas: " + preke.Pavadinimas);
@@ -75,7 +84,10 @@ namespace ObjektoNuskaitymasIsKonsoles // Note: actual namespace depends on the 
             Console.WriteLine("Id: " + preke.Id);
         }
 
-
+        /// <summary>
+        /// Funkcija išveda kelias prekes (sąrašą) į konsolę
+        /// </summary>
+        /// <param name="prekeList">Prekių List'as, kurį išvedinės į konsolę.</param>
         static void IsvestiKeliasPrekes(List<Preke> prekeList)
         {
             foreach (Preke preke in prekeList)
